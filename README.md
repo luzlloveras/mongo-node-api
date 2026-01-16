@@ -1,10 +1,11 @@
 # Artists API
 
-REST API for managing artist records. Built with NestJS and MongoDB.
+REST API for managing artist records in a small catalog. It exists to provide a
+clean backend for a simple client that needs basic CRUD and predictable data
+shape.
 
-## Scope
-- CRUD operations for artists
-- MongoDB persistence via Mongoose
+Built with NestJS and MongoDB. Mongoose is used to keep the schema explicit and
+avoid ad‑hoc document shapes.
 
 ## Requirements
 - Node.js 18+
@@ -14,39 +15,10 @@ REST API for managing artist records. Built with NestJS and MongoDB.
 The app reads `MONGODB_URI` from the environment. If it's not set, it falls back
 to `mongodb://127.0.0.1:27017/luzlloveras`.
 
-For Atlas, use the connection string from the UI and URL‑encode the password if
-it contains special characters.
-Example:
-
-```bash
-export MONGODB_URI="mongodb+srv://USER:ENCODED_PASSWORD@cluster0.example.mongodb.net/luzlloveras?retryWrites=true&w=majority"
-```
-
 ## Running
 ```bash
 npm install
 npm run start:dev
 ```
 
-The API listens on `http://localhost:3000`.
-
-## API
-Base path: `/artists`
-
-- `GET /artists` — list all artists
-- `GET /artists/:id` — fetch one artist by id
-- `POST /artists` — create an artist
-- `PUT /artists/:id` — update an artist
-- `DELETE /artists/:id` — remove an artist
-
-### Artist shape
-```json
-{
-  "name": "string",
-  "age": 0,
-  "location": "string",
-  "discipline": ["string"],
-  "worksNumber": 0,
-  "webSite": "string"
-}
-```
+The API listens on `http://localhost:3000`. The base path is `/artists`.
