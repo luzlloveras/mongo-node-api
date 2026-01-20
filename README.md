@@ -22,3 +22,5 @@ npm run start:dev
 ```
 
 The API listens on `http://localhost:3000`. The base path is `/artists`.
+Swagger UI is available at `http://localhost:3000/docs`.
+OpenAPI JSON is available at `http://localhost:3000/docs-json`.
